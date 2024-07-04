@@ -8,6 +8,7 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { invoices } from './placeholder-data';
 
 export async function fetchRevenue() {
   try {
@@ -158,6 +159,7 @@ export async function fetchInvoiceById(id: string) {
       amount: invoice.amount / 100,
     }));
 
+    console.log(invoice)
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
